@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ABCkata
 {
@@ -9,14 +10,62 @@ namespace ABCkata
         static void Main(string[] args)
         {
 
-            //var firstInstance = new PuzzleSolver();
-            //string returnedWord = firstInstance.getUserInput();
-            //Console.WriteLine(returnedWord);
 
-            //bool isItSpellable = firstInstance.canWordBeSpelled(returnedWord);
+            //while (true)
+            //{
+            //    bool checkingIfOnlyLetters = false;
+            //    string returnedWord = "";
+            //    while (checkingIfOnlyLetters == false)
+            //    {
+            //        returnedWord = UserInput.GetWordFromUser();
+            //        var ErrorhandlingInstance = new Errorhandling();
+            //        checkingIfOnlyLetters = ErrorhandlingInstance.CheckIfOnlyLetters(returnedWord);
+            //        if (checkingIfOnlyLetters == false)
+            //        {
+            //            Console.WriteLine("You cannot use numbers or special characters");
+            //        }
+            //    }
 
-            //Console.WriteLine(isItSpellable);
+            //    if (returnedWord == "X" )
+            //    {
+            //        break;
+            //    }
+            //    var firstBlockCreator = new BlockCreator();
+            //    var firstPile = firstBlockCreator.CreateBlocks();
 
+            //    var firstPuzzleSolver = new PuzzleSolver();
+            //    bool isItSpellable = firstPuzzleSolver.CanWordBeSpelled(returnedWord, firstPile);
+            //    Console.WriteLine(isItSpellable);
+            //}
+
+            while (true)
+            {
+                string returnedWord= String.Empty;
+                bool checkingIfOnlyLetters = false;
+                //should this be its own class/function !??
+                if (checkingIfOnlyLetters == false)
+                {
+                    returnedWord = UserInput.GetWordFromUser();
+                    var ErrorhandlingInstance = new Errorhandling();
+                    checkingIfOnlyLetters = ErrorhandlingInstance.CheckIfOnlyLetters(returnedWord);
+                }
+               
+
+                if (returnedWord == "X")
+                {
+                    break;
+                }
+                var firstBlockCreator = new BlockCreator();
+                var firstPile = firstBlockCreator.CreateBlocks();
+
+                var firstPuzzleSolver = new PuzzleSolver();
+                bool isItSpellable = firstPuzzleSolver.CanWordBeSpelled(returnedWord, firstPile);
+                Console.WriteLine(isItSpellable);
+            }
         }
+
+       
+
+       
     }
 }
