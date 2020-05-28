@@ -4,7 +4,7 @@ using Xunit;
 
 namespace ABCkataTest
 {
-    public class ErrorHandlingTests
+    public class ErrorHandlingShould
     {
         [Fact]
         public void CheckIfOnlyLetters_GivenMonkey_ShouldReturnTrue()
